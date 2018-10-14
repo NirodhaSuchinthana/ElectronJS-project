@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body> 
+
+    <button id="btn">
+        Click
+    </button>
+
+<script>
+
+    var mysql = require('mysql');
+
+    document.getElementById("btn").addEventListener("click",() =>{
+        // Add the credentials to access your database
+    var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : null, // or the original password : 'apaswword'
+    database : 'project'
+    });
+
+    // connect to mysql
+connection.connect(function(err) {
+    // in case of error
+    if(err){
+        console.log(err.code);
+        console.log(err.fatal);
+    }
+    console.log("Success");
+    //listen for app to be ready
+
+});
+
+
+
+    },false);
+</script>
+
+</body>
+</html>
